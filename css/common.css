@@ -12,4 +12,16 @@
     color: #212121;
     line-height: 1.5;
   }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  
+  }
+
+  .gallery-image {
+    width: 500px;
+  }
   
