@@ -26,24 +26,23 @@ const images = [
   ];
 
   const imagesEl = document.querySelector(".gallery");
+  const fragment = document.createDocumentFragment();
 
-  const elements = images.map((image) => {
-    const imageEl = document.createElement("img");
-    imageEl.src = image.url;
-    imageEl.alt = image.alt;
-    imageEl.classList.add("gallery-image");
+ images.forEach((image) => {
+    const img = document.createElement("img");
+    img.src = image.url;
+    img.alt = image.alt;
+    img.classList.add("gallery-image");
 
-return imageEl;
-    
-  })
+    const li = document.createElement("li");
+    li.appendChild(img);
 
-  console.log(imagesEl.append(...elements));
+    fragment.appendChild(li);
+
+  });
+
+  imagesEl.appendChild(fragment);
+
+  console.log(imagesEl.innerHTML);
   
 
-//   Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>.
-
-// Ти можеш створити й додати HTML-елементи, використовуючи document.createElement() 
-// і elem.append() або шаблонні рядки і elem.insertAdjacentHTML().
-
-// Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
-// Додай мінімальне оформлення галереї флексбоксами через CSS класи.
